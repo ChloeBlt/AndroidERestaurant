@@ -11,12 +11,21 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        var button1 = findViewById(R.id.button2) as Button
-
+        var button1 = findViewById(R.id.button1) as Button
         button1.setOnClickListener {
             // toast on button click event
-            Toast.makeText(this, "vous avez choisiie les entrées.", Toast.LENGTH_LONG).show()
-        }
+            Toast.makeText(this, "vous avez choisie les entrées.", Toast.LENGTH_LONG).show()}
+
+        var button2 = findViewById(R.id.button2) as Button
+        button2.setOnClickListener {
+            // toast on button click event
+            Toast.makeText(this, "vous avez choisie les plats.", Toast.LENGTH_LONG).show()}
+
+        var button3 = findViewById(R.id.button3) as Button
+        button3.setOnClickListener {
+            // toast on button click event
+            Toast.makeText(this, "vous avez choisie les déserts.", Toast.LENGTH_LONG).show()}
+
     }
 
 }
