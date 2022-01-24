@@ -7,7 +7,7 @@
     tools:context=".HomeActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button1"
         android:layout_width="130dp"
         android:layout_height="59dp"
         android:layout_marginTop="80dp"
@@ -18,31 +18,31 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"/>
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="132dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="15dp"
+        android:id="@+id/button2"
+        android:layout_width="128dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#009688"
         android:lineSpacingExtra="8sp"
-        android:text="Déserts"
+        android:text="Plats"
         android:textAlignment="center"
-        android:textAllCaps="true"
         android:textColor="#F1EFEF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/button1" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="128dp"
         android:layout_height="60dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#009688"
         android:lineSpacingExtra="8sp"
         android:text="Plats"
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <ImageView
         android:id="@+id/imageView4"
