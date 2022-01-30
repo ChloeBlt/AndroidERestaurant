@@ -1,5 +1,6 @@
 package fr.isen.banliat.androiderestaurant
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,34 +19,31 @@ class DishActivity : AppCompatActivity() {
         binding.mainDishTitle.text = intent.getStringExtra("category_type")
 
 
-        //setContentView(R.layout.activity_home)
-
         // *************** RecyclerView ***************
 
-        // getting the recyclerview by its id
-        //val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
+        binding.dishList.layoutManager = LinearLayoutManager(this)
 
-        // this creates a vertical layout Manager
-        //recyclerview.layoutManager = LinearLayoutManager(this)
-        binding.mainDishRecylcerView.layoutManager = LinearLayoutManager(this)
+        /*
+        val dishes = listOf(
+            Dish("curry", R.drawable.totonocuisine, "description"),
+            Dish("curry", R.drawable.totonocuisine, "description")
+        )
+        */
 
         // ArrayList of class ItemsViewModel
-        val data = ArrayList<ItemsViewModel>()
+        val dishes = ArrayList<Dish>()
 
         // This loop will create 20 Views containing
-        // the image with the count of view
         for (i in 1..20) {
-            data.add(ItemsViewModel(R.drawable.coloriage_cuisinier_16770,"Item" + i))
+            dishes.add(Dish("Item" + i, R.drawable.totono_totoro, "description"))
         }
-        data.add(ItemsViewModel(R.drawable.coloriage_cuisinier_16770,"miam"))
-        data.add(ItemsViewModel(R.drawable.coloriage_cuisinier_16770,"nomnom"))
-
-
-        // This will pass the ArrayList to our Adapter
-        val adapter = CategoriesAdapter(data)
 
         // Setting the Adapter with the recyclerview
-        binding.mainDishRecylcerView.adapter = adapter
+        binding.dishList.adapter = DishAdapter(dishes) {
+            val intent = Intent(this, DetailActivity::class.java )
+            intent.putExtra("dish",it)
+            startActivity( intent)
+        }
 
     }
 }

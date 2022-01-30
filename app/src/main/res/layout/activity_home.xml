@@ -42,7 +42,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/turquoise"
         android:lineSpacingExtra="8sp"
-        android:text="@string/home_main_dish"
+        android:text="plat"
         android:textAlignment="center"
         android:textColor="#F1EFEF"
         android:textSize="20sp"

@@ -37,7 +37,7 @@ class HomeActivity : AppCompatActivity() {
         val intent = Intent ( this, DishActivity::class.java)
         intent.putExtra("category_type", category)
         //toast
-        //Toast.makeText(this, "Vous avez choisie les...", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Vous avez choisie les " + category + "s", Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }
 
