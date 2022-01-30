@@ -6,88 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <ImageView
+        android:id="@+id/backgroundTotono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="-60dp"
+        android:layout_marginBottom="-15dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/totono" />
+
     <Button
         android:id="@+id/buttonStarter"
-        android:layout_width="130dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="80dp"
-        android:backgroundTint="#009688"
+        android:layout_width="135dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="11dp"
+        android:backgroundTint="@color/turquoise"
         android:lineSpacingExtra="8sp"
         android:text="@string/home_starter"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cheflogo" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32" />
 
     <Button
         android:id="@+id/buttonMainDish"
-        android:layout_width="128dp"
+        android:layout_width="135dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#009688"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/turquoise"
         android:lineSpacingExtra="8sp"
         android:text="@string/home_main_dish"
         android:textAlignment="center"
         android:textColor="#F1EFEF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonStarter"
+        app:layout_constraintStart_toStartOf="@+id/buttonStarter"
         app:layout_constraintTop_toBottomOf="@+id/buttonStarter" />
 
     <Button
         android:id="@+id/buttonDessert"
-        android:layout_width="128dp"
+        android:layout_width="135dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#009688"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/turquoise"
         android:lineSpacingExtra="8sp"
         android:text="@string/home_dessert"
         android:textAlignment="center"
         android:textColor="#F1EFEF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonMainDish"
+        app:layout_constraintStart_toStartOf="@+id/buttonMainDish"
         app:layout_constraintTop_toBottomOf="@+id/buttonMainDish" />
 
-    <ImageView
-        android:id="@+id/cheflogo"
-        android:layout_width="117dp"
-        android:layout_height="142dp"
-        android:layout_marginBottom="-16dp"
-        android:src="@drawable/coloriage_cuisinier_16770"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView3" />
-
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="4dp"
+        android:id="@+id/notRestaurant"
+        android:layout_width="420dp"
+        android:layout_height="71dp"
         android:fontFamily="cursive"
-        android:text="DroitRestaurant"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="Bienvenue chez"
+        android:text="@string/notRestaurant"
+        android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="38sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04000002" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

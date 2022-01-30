@@ -3,4 +3,5 @@
     <string name="home_starter">entrée</string>
     <string name="home_main_dish">plats</string>
     <string name="home_dessert">dessert</string>
+    <string name="notRestaurant">Ce n\'est pas un restaurant</string>
 </resources>
