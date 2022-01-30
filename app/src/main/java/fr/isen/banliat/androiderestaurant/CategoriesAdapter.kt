@@ -14,7 +14,7 @@ class CategoriesAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.
         // inflates the card_view_design view
         // that is used to hold list item
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_view_design, parent, false)
+            .inflate(R.layout.category_cell, parent, false)
 
         return ViewHolder(view)
     }
@@ -39,8 +39,8 @@ class CategoriesAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.
 
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.imageMainDish)
-        val textView: TextView = itemView.findViewById(R.id.cellmainDish)
+        val imageView: ImageView = itemView.findViewById(R.id.dishImage)
+        val textView: TextView = itemView.findViewById(R.id.dishTitle)
 
     }
 }

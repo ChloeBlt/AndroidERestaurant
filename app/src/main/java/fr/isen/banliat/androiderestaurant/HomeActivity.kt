@@ -3,10 +3,7 @@ package fr.isen.banliat.androiderestaurant
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
-import fr.isen.banliat.androiderestaurant.CategoriesActivity
-import fr.isen.banliat.androiderestaurant.R
 import fr.isen.banliat.androiderestaurant.databinding.ActivityHomeBinding
 
 
@@ -23,13 +20,9 @@ class HomeActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
-
             binding.buttonStarter.setOnClickListener {
                 changeActivity(getString(R.string.home_starter))
             }
-
-
 
             binding.buttonMainDish.setOnClickListener {
                 changeActivity(getString(R.string.home_main_dish))
@@ -38,14 +31,13 @@ class HomeActivity : AppCompatActivity() {
             binding.buttonDessert.setOnClickListener {
                 changeActivity(getString(R.string.home_dessert))
             }
-
     }
 
     private fun changeActivity(category: String) {
-        val intent = Intent ( this, CategoriesActivity::class.java)
+        val intent = Intent ( this, DishActivity::class.java)
         intent.putExtra("category_type", category)
         //toast
-        Toast.makeText(this, "Vous avez choisie les...", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "Vous avez choisie les...", Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }
 

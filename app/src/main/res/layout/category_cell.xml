@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/turquoise"
+    app:cardCornerRadius="15dp"
+    app:contentPadding="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/dishImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dishTitle"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/dishImage"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:id="@+id/dishDetails"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/dishImage"
+            app:layout_constraintEnd_toEndOf="@+id/dishTitle"
+            app:layout_constraintStart_toStartOf="@+id/dishTitle"
+            app:layout_constraintTop_toBottomOf="@+id/dishTitle" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
