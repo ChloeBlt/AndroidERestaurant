@@ -1,4 +1,4 @@
-package fr.isen.banliat.androiderestaurant
+package fr.isen.banliat.androiderestaurant.model
 
 import java.io.Serializable
 

@@ -1,17 +1,19 @@
 package fr.isen.banliat.androiderestaurant
 
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import fr.isen.banliat.androiderestaurant.databinding.CategoryCellBinding
+import fr.isen.banliat.androiderestaurant.model.DishModel
 
-class DishAdapter (val dishes: List<Dish>, val onDishClicked: (Dish) -> Unit): RecyclerView.Adapter<DishAdapter.DishViewHolder>() {
+class DishAdapter (val dishes: List<DishModel>, val onDishClicked: (DishModel) -> Unit): RecyclerView.Adapter<DishAdapter.DishViewHolder>() {
 
     class DishViewHolder(binding: CategoryCellBinding): RecyclerView.ViewHolder(binding.root){
-        val dishImage = binding.dishImage
-        val dishTitle = binding.dishTitle
-        val dishDetails = binding.dishDetails
-
+        val dishPicture = binding.dishImage
+        val dishName = binding.dishTitle
+        val dishPrice = binding.dishDetails
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
@@ -20,16 +22,21 @@ class DishAdapter (val dishes: List<Dish>, val onDishClicked: (Dish) -> Unit): R
     }
 
     override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
-        holder.dishTitle.text = dishes[position].title
-        holder.dishImage.setImageResource(dishes[position].image)
-        holder.dishDetails.text = dishes[position].details
+        holder.dishName.text = dishes[position].name_fr
+        // todo with picasso holder.dishPicture.setImageResource(dishes[position].getFirstPicture())
+
+        Picasso.get()
+            .load(dishes[position].getFirstPicture())
+            .error(R.drawable.totonocuisine)
+            .placeholder(R.drawable.totonocuisine)
+            .into(holder.dishPicture)
+
+        holder.dishPrice.text = dishes[position].getFormattedPrice()
 
         holder.itemView.setOnClickListener {
             onDishClicked(dishes[position])
         }
-
     }
 
     override fun getItemCount(): Int = dishes.size
-
 }

@@ -26,19 +26,20 @@
 
         <TextView
             android:id="@+id/dishTitle"
-            android:layout_width="240dp"
-            android:layout_height="35dp"
-            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:textColor="@color/white"
+            android:textSize="24sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toRightOf="@id/dishImage"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="15dp"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/dishDetails"
-            android:layout_width="240dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textColor="@color/white"
             android:textStyle="italic"
