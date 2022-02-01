@@ -27,16 +27,32 @@ class DetailActivity : AppCompatActivity() {
 
         binding.detailTitle.text = dish.name_fr
 
-        binding.dishPhotPager.adapter = DishPictureAdapter (this, dish.pictures)
+        binding.dishPhotPager.adapter = DishPictureAdapter(this, dish.pictures)
 
-        binding.dishDescription.text = dish.ingredients.joinToString(",") { it.name_fr}
+        binding.dishDescription.text = dish.ingredients.joinToString(", ") { it.name_fr }
 
-        //quand je clique sur le bouton plus
-        // j'increment nbInBasket
-        // je met à jour le texte
 
-        //quand je clique sur le bouton moins
-        //je décrement nbInbasket tout en verifiant qu'on ne puisse pas avoir nbInBas < 0
-        // je met à jour le texte
+        //button
+        var numberDish = 1
+        binding.totalButon.text =
+            "ajouter au panier : " + (dish.prices[0].price.toFloat() * numberDish) + "€"
+
+        //add
+        binding.addBtn.setOnClickListener {
+            numberDish += 1
+            binding.quantiteText.text = "" + numberDish
+            binding.totalButon.text = "ajouter au panier : " + (dish.prices[0].price.toFloat() * numberDish) + "€"
+
+        }
+
+        //less
+        binding.removeBtn.setOnClickListener {
+            if (numberDish > 0) {
+                numberDish -= 1
+                binding.quantiteText.text = "" + numberDish
+                binding.totalButon.text = "ajouter au panier : " + (dish.prices[0].price.toFloat() * numberDish) + "€"
+
+            }
+        }
     }
 }
