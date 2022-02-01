@@ -33,9 +33,11 @@ class DishAdapter (val dishes: List<DishModel>, val onDishClicked: (DishModel) -
 
         holder.dishPrice.text = dishes[position].getFormattedPrice()
 
+
         holder.itemView.setOnClickListener {
             onDishClicked(dishes[position])
         }
+
     }
 
     override fun getItemCount(): Int = dishes.size

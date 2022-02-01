@@ -44,7 +44,7 @@
         android:lineSpacingExtra="8sp"
         android:text="plat"
         android:textAlignment="center"
-        android:textColor="#F1EFEF"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/buttonStarter"
         app:layout_constraintStart_toStartOf="@+id/buttonStarter"
