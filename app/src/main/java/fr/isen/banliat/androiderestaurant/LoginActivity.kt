@@ -1,10 +1,9 @@
 package fr.isen.banliat.androiderestaurant
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import fr.isen.banliat.androiderestaurant.databinding.ActivityHomeBinding
-
 import fr.isen.banliat.androiderestaurant.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -20,14 +19,15 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
 
-            if(binding.edUsername.text.trim().isNotEmpty() || binding.edPassword.text.trim().isNotEmpty()){
-                Toast.makeText(this, "Input provided", Toast.LENGTH_SHORT).show()
-            }else{
-                Toast.makeText(this, "Input required", Toast.LENGTH_SHORT).show()
-
+            if (binding.edMail.text.trim().isNotEmpty() || binding.edPassword.text.trim().isNotEmpty()) {
+                Toast.makeText(this, "entrer les informations nécessaires", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "champ vide", Toast.LENGTH_SHORT).show()
             }
-
         }
-
+        binding.registerTxt.setOnClickListener {
+            val intent = Intent (this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
