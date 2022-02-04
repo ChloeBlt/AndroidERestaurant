@@ -1,8 +1,10 @@
 package fr.isen.banliat.androiderestaurant
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import fr.isen.banliat.androiderestaurant.databinding.ActivityDetailBinding
 import fr.isen.banliat.androiderestaurant.model.DishModel
 
@@ -20,10 +22,15 @@ class DetailActivity : AppCompatActivity() {
         val dish = intent.getSerializableExtra("dish") as DishModel
         initDetail(dish)
 
+        binding.totalButon.setOnClickListener{
+            val intent = Intent (this, LoginActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(this,"Clicked", Toast.LENGTH_LONG).show()
+        }
+
     }
 
     private fun initDetail(dish: DishModel) {
-        var nbInBucket = 1
 
         binding.detailTitle.text = dish.name_fr
 
@@ -34,8 +41,7 @@ class DetailActivity : AppCompatActivity() {
 
         //button
         var numberDish = 1
-        binding.totalButon.text =
-            "ajouter au panier : " + (dish.prices[0].price.toFloat() * numberDish) + "€"
+        binding.totalButon.text = "ajouter au panier : " + (dish.prices[0].price.toFloat() * numberDish) + "€"
 
         //add
         binding.addBtn.setOnClickListener {
