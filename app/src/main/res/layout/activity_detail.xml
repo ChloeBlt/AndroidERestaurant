@@ -9,9 +9,15 @@
 
     <TextView
         android:id="@+id/detailTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="cursive"
+        android:textAlignment="center"
+        android:textColor="@color/turquoise"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dishPhotPager" />
@@ -19,16 +25,20 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/dishPhotPager"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/dishDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailTitle" />
@@ -39,46 +49,57 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="48dp"
         android:backgroundTint="@color/turquoise"
-        android:text="ajouter au panier"
-        android:textColor="#FFFFFF"
+        android:padding="10dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:background="@color/turquoise" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:layout_marginEnd="70dp"
         android:clickable="true"
+        android:focusable="true"
+        android:foreground="@drawable/plus"
+        android:tint="@color/white"
+        app:backgroundTint="@color/turquoise"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toTopOf="@+id/totalButon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dishDescription"
-        app:srcCompat="@android:drawable/ic_menu_add"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:focusable="true" />
+        app:srcCompat="@drawable/plus"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/removeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="100dp"
         android:clickable="true"
-        android:rotation="90"
+        android:focusable="true"
+        android:foreground="@drawable/moins"
+        android:tint="@color/white"
+        app:backgroundTint="@color/turquoise"
+        app:layout_constraintBottom_toTopOf="@+id/totalButon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dishDescription"
-        app:srcCompat="@android:drawable/ic_menu_info_details"
+        app:srcCompat="@drawable/moins"
         tools:ignore="SpeakableTextPresentCheck"
-        android:focusable="true" />
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/quantiteText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="@+id/addBtn"
         app:layout_constraintEnd_toStartOf="@+id/addBtn"
         app:layout_constraintStart_toEndOf="@+id/removeBtn"

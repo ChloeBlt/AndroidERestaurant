@@ -10,8 +10,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textSize="34sp"
+        android:fontFamily="cursive"
+        android:text="se connecter"
+        android:textColor="@color/turquoise"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/mailCase"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,26 +64,33 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:background="@color/turquoise"
         android:text="Login"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPassword"
-        tools:layout_editor_absoluteX="30dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPassword" />
 
     <TextView
         android:id="@+id/registerTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="vous n'avez pas de compte ?"
+        android:padding="10dp"
+        android:text="☞ vous n'avez pas de compte ?"
+        android:textSize="16sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword"
-        android:padding="10dp"/>
+        app:layout_constraintVertical_bias="0.525" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
