@@ -39,7 +39,7 @@ class DetailActivity : AppCompatActivity() {
         binding.dishDescription.text = dish.ingredients.joinToString(", ") { it.name_fr }
 
 
-        //button
+
         var numberDish = 1
         binding.totalButon.text = "ajouter au panier : " + (dish.prices[0].price.toFloat() * numberDish) + "€"
 

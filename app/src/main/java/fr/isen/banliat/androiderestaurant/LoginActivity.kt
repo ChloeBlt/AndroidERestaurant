@@ -3,8 +3,14 @@ package fr.isen.banliat.androiderestaurant
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import com.google.gson.Gson
 import fr.isen.banliat.androiderestaurant.databinding.ActivityLoginBinding
+import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
 
@@ -21,6 +27,31 @@ class LoginActivity : AppCompatActivity() {
 
             if (binding.edMail.text.trim().isNotEmpty() || binding.edPassword.text.trim().isNotEmpty()) {
                 Toast.makeText(this, "entrer les informations nécessaires", Toast.LENGTH_SHORT).show()
+
+
+                val email = binding.edMail.text.toString()
+                val password = binding.edPassword.text.toString()
+
+                //Requete POST
+
+                val url = "http://test.api.catering.bluecodegames.com/user/login"
+                val jsonObject = JSONObject()
+                jsonObject.put("id_shop", "1")
+                jsonObject.put("email", email)
+                jsonObject.put("password", password)
+
+
+                val jsonRequest = JsonObjectRequest(
+                    Request.Method.POST, url, jsonObject, { response ->
+                        var gson = Gson()
+
+                    }, {
+                        Log.e("", "erreur lors de la récupération")
+                    })
+                Volley.newRequestQueue(this).add(jsonRequest)
+
+
+
             } else {
                 Toast.makeText(this, "champ vide", Toast.LENGTH_SHORT).show()
             }

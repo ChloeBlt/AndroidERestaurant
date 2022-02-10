@@ -15,7 +15,8 @@ data class DishModel(
     ): Serializable {
         fun getFirstPicture() = if ( pictures [0].isNotEmpty()) pictures[0] else null
         fun getFormattedPrice() = prices[0].price + "€"
-    }
+        fun getFormatedIngredients() = ingredients
+
 
 data class Ingredient (val name_fr: String): Serializable
-data class Price(val price: String): Serializable
+data class Price(val price: String): Serializable }

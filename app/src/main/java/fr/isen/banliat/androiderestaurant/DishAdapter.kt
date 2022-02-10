@@ -17,25 +17,27 @@ class DishAdapter (val dishes: List<DishModel>, val onDishClicked: (DishModel) -
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
-        val binding = CategoryCellBinding.inflate(LayoutInflater.from(parent.context),parent, false)
+        val binding = CategoryCellBinding
+            .inflate(LayoutInflater.from(parent.context),parent,false)
         return DishViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
-        holder.dishName.text = dishes[position].name_fr
-        // todo with picasso holder.dishPicture.setImageResource(dishes[position].getFirstPicture())
+        val dish = dishes[position]
+        holder.dishName.text = dish.name_fr
+
 
         Picasso.get()
-            .load(dishes[position].getFirstPicture())
+            .load(dish.getFirstPicture())
             .error(R.drawable.totonocuisine)
             .placeholder(R.drawable.totonocuisine)
             .into(holder.dishPicture)
 
-        holder.dishPrice.text = dishes[position].getFormattedPrice()
+        holder.dishPrice.text = dish.getFormattedPrice()
 
 
         holder.itemView.setOnClickListener {
-            onDishClicked(dishes[position])
+            onDishClicked(dish)
         }
 
     }
