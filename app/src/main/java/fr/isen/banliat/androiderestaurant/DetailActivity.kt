@@ -73,10 +73,10 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
-            R.id.cart -> {
-                val intent = Intent(this, CartActivity::class.java)
-                startActivity(intent)
-            }
+            R.id.cart -> { val intent = Intent(this, CartActivity::class.java)
+                            startActivity(intent) }
+            R.id.account -> { val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent) }
         }
         return super.onOptionsItemSelected(item)
     }

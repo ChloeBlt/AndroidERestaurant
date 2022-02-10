@@ -5,6 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
@@ -70,4 +72,20 @@ class DishActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+// *************** icons on the toolbar ***************
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.nav_menu,menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.cart -> { val intent = Intent(this, CartActivity::class.java)
+                startActivity(intent) }
+            R.id.account -> { val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent) }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
