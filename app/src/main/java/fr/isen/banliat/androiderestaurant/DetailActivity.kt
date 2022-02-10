@@ -3,6 +3,8 @@ package fr.isen.banliat.androiderestaurant
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import fr.isen.banliat.androiderestaurant.databinding.ActivityDetailBinding
@@ -29,6 +31,7 @@ class DetailActivity : AppCompatActivity() {
         }
 
     }
+
 
     private fun initDetail(dish: DishModel) {
 
@@ -61,4 +64,21 @@ class DetailActivity : AppCompatActivity() {
             }
         }
     }
+
+    // display cart icon on the menu
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.nav_menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.cart -> {
+                val intent = Intent(this, CartActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
