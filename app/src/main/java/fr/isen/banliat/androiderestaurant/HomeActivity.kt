@@ -6,9 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import fr.isen.banliat.androiderestaurant.databinding.ActivityHomeBinding
-
 
 
 class HomeActivity : AppCompatActivity() {
@@ -50,7 +48,7 @@ class HomeActivity : AppCompatActivity() {
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
-            R.id.cart -> { val intent = Intent(this, CartActivity::class.java)
+            R.id.cart -> { val intent = Intent(this, BasketActivity::class.java)
                 startActivity(intent) }
             R.id.account -> { val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent) }

@@ -12,11 +12,11 @@ data class DishModel(
     @SerializedName("images") val pictures: List<String>,
     val ingredients: List<Ingredient>,
     val prices: List<Price>
-    ): Serializable {
-        fun getFirstPicture() = if ( pictures [0].isNotEmpty()) pictures[0] else null
-        fun getFormattedPrice() = prices[0].price + "€"
-        fun getFormatedIngredients() = ingredients
+): Serializable {
+    fun getFirstPicture() = if ( pictures [0].isNotEmpty()) pictures[0] else null
+    fun getFormattedPrice() = prices[0].price + "€"
+    fun getFormatedIngredients() = ingredients
 
 
-data class Ingredient (val name_fr: String): Serializable
-data class Price(val price: String): Serializable }
+    data class Ingredient (val name_fr: String): Serializable
+    data class Price(val price: String): Serializable }

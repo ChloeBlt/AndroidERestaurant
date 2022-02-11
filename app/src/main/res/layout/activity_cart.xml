@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CartActivity">
+    tools:context=".BasketActivity">
 
     <TextView
         android:id="@+id/cartTitle"
@@ -13,10 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:fontFamily="cursive"
+        android:text="votre panier"
         android:textColor="@color/turquoise"
         android:textSize="38sp"
         android:textStyle="bold"
-        android:text="votre panir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,20 +28,20 @@
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/connectionBtn"
+        app:layout_constraintBottom_toTopOf="@+id/paidBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cartTitle" />
 
     <Button
-        android:id="@+id/connectionBtn"
+        android:id="@+id/paidBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="50dp"
         android:background="@color/turquoise"
-        android:text="connexion"
+        android:text="valider votre commande"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

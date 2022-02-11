@@ -1,15 +1,13 @@
 package fr.isen.banliat.androiderestaurant
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.isen.banliat.androiderestaurant.databinding.ActivityCartBinding
 import fr.isen.banliat.androiderestaurant.model.CartData
-import fr.isen.banliat.androiderestaurant.model.DishModel
-import fr.isen.banliat.androiderestaurant.model.DishResult
 
-class CartActivity : AppCompatActivity() {
+class BasketActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCartBinding
 
@@ -19,8 +17,17 @@ class CartActivity : AppCompatActivity() {
         binding = ActivityCartBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.cartList.layoutManager = LinearLayoutManager(this)
 
-        //displayDishesCart(dish)
+
+        /////////////////////////
+
+        var dish = intent.getSerializableExtra("data") as List<CartData>
+        Log.e("test", dish.toString())
+        displayDishesCart(dish)
+
+
+
 
 
     }
@@ -28,6 +35,6 @@ class CartActivity : AppCompatActivity() {
     private fun displayDishesCart(dishResult: List<CartData>) {
         binding.cartList.layoutManager = LinearLayoutManager(this)
 
-        binding.cartList.adapter = CartAdapter(dishResult)
+        binding.cartList.adapter = BasketAdapter(dishResult)
     }
 }

@@ -8,7 +8,7 @@ import fr.isen.banliat.androiderestaurant.databinding.CartCellBinding
 import fr.isen.banliat.androiderestaurant.model.CartData
 
 
-class CartAdapter(private val dishes: List<CartData>) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
+class BasketAdapter(private val dishes: List<CartData>) : RecyclerView.Adapter<BasketAdapter.CartViewHolder>() {
 
     class CartViewHolder(private val binding: CartCellBinding): RecyclerView.ViewHolder(binding.root){
         val dishPicture = binding.dishImage
@@ -27,12 +27,12 @@ class CartAdapter(private val dishes: List<CartData>) : RecyclerView.Adapter<Car
         holder.dishName.text = dish.DishName
 
         Picasso.get()
-            .load(R.drawable.ic_launcher_foreground)//dishes[position].getFirstPicture())
-            .placeholder(R.drawable.ic_launcher_foreground)
+            .load(R.drawable.totono)
+            .error(R.drawable.totonocuisine)
+            .placeholder(R.drawable.totonocuisine)
             .into(holder.dishPicture)
 
         holder.dishQuantity.text = "Quantité : " +dishes[position].quantity.toString()
-        val data = dishes[position]
     }
 
     override fun getItemCount(): Int = dishes.size
