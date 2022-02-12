@@ -8,7 +8,7 @@
     tools:context=".BasketActivity">
 
     <TextView
-        android:id="@+id/cartTitle"
+        android:id="@+id/basketTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -23,18 +23,20 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cartList"
+        android:id="@+id/basketList"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/paidBtn"
+        app:layout_constraintBottom_toTopOf="@+id/basketButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cartTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/basketTitle" />
+
+
 
     <Button
-        android:id="@+id/paidBtn"
+        android:id="@+id/basketButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"

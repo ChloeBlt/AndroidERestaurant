@@ -34,6 +34,12 @@ class DishActivity : MenuActivity() {
 
     }
 
+
+    override fun onResume() {
+        invalidateOptionsMenu()
+        super.onResume()
+    }
+
     // get the data with a POST request + parse the response
     private fun loadDishesFromCategory(categoryType: String) {
         val url = "http://test.api.catering.bluecodegames.com/menu"

@@ -38,43 +38,15 @@ class HomeActivity : MenuActivity() {
         startActivity(intent)
     }
 
-
-    /*
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.nav_menu,menu)
-        return true
-    }
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId){
-            R.id.shoppingCart -> { val intent = Intent(this, BasketActivity::class.java)
-                startActivity(intent) }
-            R.id.account -> { val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent) }
-        }
-        return super.onOptionsItemSelected(item)
+    override fun onResume() {
+        invalidateOptionsMenu()
+        super.onResume()
     }
 
-
-
-
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.nav_menu, menu)
-        val menuView = menu?.findItem(R.id.shoppingCart)?.actionView
-        val count = menuView?.findViewById<TextView>(R.id.nbItems)
-        val sharedPrefrences = getSharedPreferences("app_prefs", MODE_PRIVATE)
-        count?.text = sharedPrefrences.getInt("basket_count", 0).toString()
-
-        menuView?.setOnClickListener{
-            startActivity(Intent(this, BasketActivity::class.java))
-        }
-
-        return super.onCreateOptionsMenu(menu)
-
-
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("HomeActivity","destroyed")
     }
-
-     */
 
 }
 

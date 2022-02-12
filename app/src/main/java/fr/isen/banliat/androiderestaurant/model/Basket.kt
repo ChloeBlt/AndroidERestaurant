@@ -5,7 +5,8 @@ import java.io.Serializable
 
 data class Basket (@SerializedName("items") val items: MutableList<ItemBasket>) : Serializable
 
-data class ItemBasket (@SerializedName("quantity") var quantity: Int,
+data class ItemBasket (
+                        @SerializedName("quantity") var quantity: Int,
                        @SerializedName("dish") var dish: DishModel  )
 
 

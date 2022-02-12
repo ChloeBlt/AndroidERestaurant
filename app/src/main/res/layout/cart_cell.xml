@@ -17,7 +17,7 @@
         android:padding="10dp">
 
         <ImageView
-            android:id="@+id/dishImage"
+            android:id="@+id/dishPicture"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:scaleType="centerCrop"
@@ -32,28 +32,54 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif-condensed"
+            android:text="titre"
             android:textAlignment="textStart"
             android:textColor="@color/white"
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/dishImage"
-            app:layout_constraintTop_toTopOf="@+id/dishImage" />
+            app:layout_constraintStart_toEndOf="@+id/dishPicture"
+            app:layout_constraintTop_toTopOf="@+id/dishPicture" />
 
         <TextView
-            android:id="@+id/dishQuantity"
+            android:id="@+id/nbItemsBasket"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:text="quantité"
             android:textAlignment="textEnd"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="@+id/dishImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/dishImage"
+            app:layout_constraintBottom_toBottomOf="@+id/dishPicture"
+            app:layout_constraintStart_toEndOf="@+id/dishPicture"
             app:layout_constraintTop_toBottomOf="@+id/dishTitle"
             app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/dishPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="prix"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/nbItemsBasket"
+            app:layout_constraintTop_toBottomOf="@+id/dishTitle"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/removePicture"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/nbItemsBasket"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dishTitle"
+            app:srcCompat="@drawable/cross" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

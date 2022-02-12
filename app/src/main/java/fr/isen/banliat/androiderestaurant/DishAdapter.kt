@@ -11,7 +11,7 @@ import fr.isen.banliat.androiderestaurant.model.DishModel
 class DishAdapter (val dishes: List<DishModel>, val onDishClicked: (DishModel) -> Unit): RecyclerView.Adapter<DishAdapter.DishViewHolder>() {
 
     class DishViewHolder(binding: CategoryCellBinding): RecyclerView.ViewHolder(binding.root){
-        val dishPicture = binding.dishImage
+        val dishPicture = binding.dishPicture
         val dishName = binding.dishTitle
         val dishPrice = binding.dishDetails
     }

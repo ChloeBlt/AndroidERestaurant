@@ -1,11 +1,13 @@
 package fr.isen.banliat.androiderestaurant
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.GsonBuilder
 import fr.isen.banliat.androiderestaurant.databinding.ActivityBasketBinding
-import fr.isen.banliat.androiderestaurant.model.CartData
+import fr.isen.banliat.androiderestaurant.model.Basket
+import java.io.File
 
 class BasketActivity : AppCompatActivity() {
 
@@ -13,28 +15,76 @@ class BasketActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_basket)
         binding = ActivityBasketBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.cartList.layoutManager = LinearLayoutManager(this)
+        binding.basketList.layoutManager = LinearLayoutManager(this)
 
-        /*
-        /////////////////////////
-
-        var dish = intent.getSerializableExtra("data") as List<CartData>
-        Log.e("test", dish.toString())
-        displayDishesCart(dish)
-
-        */
-
+        readFile()
 
 
     }
 
+    private fun readFile() {
+        val gson = GsonBuilder().setPrettyPrinting().create()
+        val file = File(cacheDir.absolutePath + "UserCart.Json")
+        if (file.exists()) {
+
+            //binding.basketLoading.visibility = View.GONE
+            binding.basketList.layoutManager = LinearLayoutManager(this)
+
+            val basket = gson.fromJson(file.readText(), Basket::class.java)
+
+
+            binding.basketList.adapter = BasketAdapter(basket.items) {
+
+                basket.items.remove(it)
+                resetBasket(basket)
+                //invalidateOptionsMenu()
+
+
+            }
+
+        }
+    }
+    private fun resetBasket(basket: Basket) {
+        val file = File(cacheDir.absolutePath + "UserCart.Json")
+        saveInMemory(basket, file)
+    }
+
+    private fun saveInMemory(basket: Basket, file: File){
+        saveDishCount(basket)
+        file.writeText(GsonBuilder().create().toJson(basket))
+    }
+
+    private fun saveDishCount(basket: Basket){
+        val count = basket.items.sumOf { it.quantity }
+        val sharedPreferences = getSharedPreferences("app_prefs", MODE_PRIVATE)
+        sharedPreferences.edit().putInt("basket_count", count).apply()
+        if(count <= 0)
+            startActivity(Intent(this, HomeActivity::class.java))
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     private fun displayDishesCart(dishResult: List<CartData>) {
         binding.cartList.layoutManager = LinearLayoutManager(this)
 
         binding.cartList.adapter = BasketAdapter(dishResult)
-    }
+            }
+
+
+ */
 }
