@@ -1,10 +1,6 @@
 package fr.isen.banliat.androiderestaurant
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import com.google.gson.GsonBuilder
@@ -14,7 +10,7 @@ import java.io.File
 
 private lateinit var binding: ActivityDetailBinding
 
-class DetailActivity : AppCompatActivity() {
+class DetailActivity : MenuActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,21 +57,6 @@ class DetailActivity : AppCompatActivity() {
         binding.totalButon.text =  "ajouter au panier : " + (dish.prices[0].price.toFloat()) + "€"
     }
 
-// ********* display cart icon on the menu **********
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.nav_menu,menu)
-        return true }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId){
-            R.id.shoppingCart -> { val intent = Intent(this, BasketActivity::class.java)
-                            startActivity(intent) }
-            R.id.account -> { val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent) }
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
 // **************** add to cart ****************
     private fun saveInBasket(view: View, quantity: Int, dish: DishModel){
         val file = File(cacheDir.absolutePath + "UserCart")
@@ -102,6 +83,7 @@ class DetailActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences( "app_prefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putInt("basket_count", count).apply()
+        invalidateOptionsMenu()
 
         file.writeText(GsonBuilder().create().toJson(basket))
     }
