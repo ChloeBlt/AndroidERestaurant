@@ -16,7 +16,6 @@ import com.google.gson.Gson
 import fr.isen.banliat.androiderestaurant.databinding.ActivityDishBinding
 import fr.isen.banliat.androiderestaurant.model.DishModel
 import fr.isen.banliat.androiderestaurant.model.DishResult
-import fr.isen.banliat.androiderestaurant.BasketActivity
 import org.json.JSONObject
 
 class DishActivity : AppCompatActivity() {
@@ -81,7 +80,7 @@ class DishActivity : AppCompatActivity() {
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
-            R.id.cart -> { val intent = Intent(this, BasketActivity::class.java)
+            R.id.shoppingCart -> { val intent = Intent(this, BasketActivity::class.java)
                 startActivity(intent) }
             R.id.account -> { val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent) }

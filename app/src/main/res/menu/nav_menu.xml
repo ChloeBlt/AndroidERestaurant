@@ -7,9 +7,17 @@
         android:title="acceder à votre compte"
         app:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/cart"
+    <item android:id="@+id/shoppingCart"
         android:icon="@drawable/cart"
         android:title="voir votre panier"
-        app:showAsAction="ifRoom"/>
+        app:actionLayout="@layout/shopping_cart_badge"
+        app:showAsAction="ifRoom">
+
+    </item>
+
+
+
+
+
 
 </menu>

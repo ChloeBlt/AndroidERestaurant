@@ -4,29 +4,29 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
-import fr.isen.banliat.androiderestaurant.databinding.ActivityCartBinding
+import fr.isen.banliat.androiderestaurant.databinding.ActivityBasketBinding
 import fr.isen.banliat.androiderestaurant.model.CartData
 
 class BasketActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityCartBinding
+    private lateinit var binding: ActivityBasketBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityCartBinding.inflate(layoutInflater)
+        binding = ActivityBasketBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.cartList.layoutManager = LinearLayoutManager(this)
 
-
+        /*
         /////////////////////////
 
         var dish = intent.getSerializableExtra("data") as List<CartData>
         Log.e("test", dish.toString())
         displayDishesCart(dish)
 
-
+        */
 
 
 
