@@ -3,9 +3,12 @@ package fr.isen.banliat.androiderestaurant
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import fr.isen.banliat.androiderestaurant.databinding.ActivityBasketBinding
 import fr.isen.banliat.androiderestaurant.model.Basket
+import java.io.File
+import android.content.Context
 
 class BasketActivity : AppCompatActivity() {
 
@@ -18,8 +21,6 @@ class BasketActivity : AppCompatActivity() {
         binding = ActivityBasketBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.basketList.layoutManager = LinearLayoutManager(this)
-
         loadBasket()
 
         binding.basketValidationButton.setOnClickListener {
@@ -31,11 +32,19 @@ class BasketActivity : AppCompatActivity() {
     private fun loadBasket() {
         val basket = Basket.getBasket(this)
         val items = basket.items
+        val file = File(cacheDir.absolutePath + Basket.BASKET_FILE)
+        if (file.exists()) {
+            binding.basketList.adapter = BasketAdapter(items) {
+                basket.removeItem(it)
+                basket.save(this)
+                loadBasket()
+            }
+            binding.basketLoading.visibility = View.GONE
+            binding.basketList.layoutManager = LinearLayoutManager(this)
 
-        binding.basketList.adapter = BasketAdapter(items) {
-            basket.removeItem(it)
-            basket.save(this)
-            loadBasket()
+            val total = items.sumOf { it.quantity * it.dish.prices.first().price.toDouble()  }
+            binding.basketTotal.text = "total de votre commande : " + "$total" + "€"
+
         }
     }
 }
