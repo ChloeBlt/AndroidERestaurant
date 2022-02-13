@@ -39,16 +39,19 @@ class BasketAdapter(private val items: List<BasketItem>,
 
         holder.quantity.text = "Quantité: " + itemBasket.quantity.toString()
 
-
         val picture = itemBasket.dish.getFirstPicture()
         val picasso = Picasso.get()
         if (picture != null) {
             picasso
                 .load(picture)
+                .error(R.drawable.totonocuisine)
+                .placeholder(R.drawable.totonocuisine)
                 .into(holder.dishImageBasket)
         } else {
             picasso
                 .load(R.drawable.totonocuisine)
+                .error(R.drawable.totonocuisine)
+                .placeholder(R.drawable.totonocuisine)
                 .into(holder.dishImageBasket)
         }
 

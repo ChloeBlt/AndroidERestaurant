@@ -1,6 +1,5 @@
 package fr.isen.banliat.androiderestaurant
 
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -26,7 +25,6 @@ class DishAdapter (val dishes: List<DishModel>, val onDishClicked: (DishModel) -
         val dish = dishes[position]
         holder.dishName.text = dish.name_fr
 
-
         Picasso.get()
             .load(dish.getFirstPicture())
             .error(R.drawable.totonocuisine)
@@ -35,12 +33,9 @@ class DishAdapter (val dishes: List<DishModel>, val onDishClicked: (DishModel) -
 
         holder.dishPrice.text = dish.getFormattedPrice()
 
-
         holder.itemView.setOnClickListener {
             onDishClicked(dish)
         }
-
     }
-
     override fun getItemCount(): Int = dishes.size
 }
