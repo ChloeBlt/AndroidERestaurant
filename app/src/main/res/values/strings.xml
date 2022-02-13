@@ -21,5 +21,8 @@
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
+    <string name="quantity">Quantité : </string>
     <string name="login_failed">"Login failed"</string>
+    <string name="validationBasket">valider la commande</string>
+    <string name="basketPageTitle">votre panier</string>
 </resources>

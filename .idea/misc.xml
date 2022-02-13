@@ -11,22 +11,28 @@
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.23560910307898258" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout-w936dp/activity_login.xml" value="0.275" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_base.xml" value="0.18489583333333334" />
-        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_basket.xml" value="0.37621023513139695" />
+        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_basket.xml" value="0.5" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_cart.xml" value="0.22" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_categories.xml" value="0.33" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_create_account.xml" value="0.25" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_detail.xml" value="0.33" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_dish.xml" value="0.23809523809523808" />
+        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_dishes.xml" value="0.1" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/basket_cell.xml" value="0.3453038674033149" />
+        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/card_view_basket.xml" value="0.5" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/card_view_design.xml" value="0.37002652519893897" />
-        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/cart_cell.xml" value="0.5" />
+        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/cart_cell.xml" value="0.1" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/category_cell.xml" value="0.30062630480167013" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/fragment_blank.xml" value="0.3070652173913043" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/fragment_dish_picture.xml" value="0.25" />
+        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/menu.xml" value="0.1" />
+        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/shopping_cart_badge.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/test.xml" value="0.25" />
+        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/view_basket.xml" value="0.1" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/menu/nav_menu.xml" value="0.33" />
       </map>
     </option>

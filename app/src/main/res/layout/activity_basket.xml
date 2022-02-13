@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:fontFamily="cursive"
-        android:text="votre panier"
+        android:text="@string/basketPageTitle"
         android:textColor="@color/turquoise"
         android:textSize="38sp"
         android:textStyle="bold"
@@ -28,22 +28,21 @@
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/basketButton"
+        app:layout_constraintBottom_toTopOf="@+id/basketValidationButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/basketTitle" />
 
 
-
     <Button
-        android:id="@+id/basketButton"
+        android:id="@+id/basketValidationButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="50dp"
         android:background="@color/turquoise"
-        android:text="valider votre commande"
+        android:text="@string/validationBasket"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

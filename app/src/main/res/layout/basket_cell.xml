@@ -3,13 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     app:cardElevation="4dp"
     app:cardBackgroundColor="@color/turquoise"
     app:cardCornerRadius="15dp"
-    app:contentPadding="5dp">
+    app:contentPadding="5dp" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,16 +18,15 @@
         android:padding="10dp">
 
         <ImageView
-            android:id="@+id/dishPicture"
+            android:id="@+id/dishPictureBasket"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:scaleType="centerCrop"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/dishTitle"
+            android:id="@+id/dishNameBasket"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -37,11 +37,21 @@
             android:textColor="@color/white"
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/dishPicture"
-            app:layout_constraintTop_toTopOf="@+id/dishPicture" />
+            app:layout_constraintStart_toEndOf="@+id/dishPictureBasket"
+            app:layout_constraintTop_toTopOf="@+id/dishPictureBasket" />
+
+        <ImageView
+            android:id="@+id/removeDishBasket"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/dishQuantityBasket"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dishNameBasket"
+            app:srcCompat="@drawable/cross" />
 
         <TextView
-            android:id="@+id/nbItemsBasket"
+            android:id="@+id/dishQuantityBasket"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -50,13 +60,15 @@
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="@+id/dishPicture"
-            app:layout_constraintStart_toEndOf="@+id/dishPicture"
-            app:layout_constraintTop_toBottomOf="@+id/dishTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/dishPictureBasket"
+            app:layout_constraintStart_toEndOf="@+id/dishPictureBasket"
+            app:layout_constraintTop_toBottomOf="@+id/dishNameBasket"
             app:layout_constraintVertical_bias="1.0" />
 
+
+
         <TextView
-            android:id="@+id/dishPrice"
+            android:id="@+id/dishPriceBasket"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -67,21 +79,9 @@
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/nbItemsBasket"
-            app:layout_constraintTop_toBottomOf="@+id/dishTitle"
+            app:layout_constraintStart_toEndOf="@+id/dishQuantityBasket"
+            app:layout_constraintTop_toBottomOf="@+id/dishNameBasket"
             app:layout_constraintVertical_bias="1.0" />
 
-        <ImageView
-            android:id="@+id/removePicture"
-            android:layout_width="43dp"
-            android:layout_height="42dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/nbItemsBasket"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dishTitle"
-            app:srcCompat="@drawable/cross" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.cardview.widget.CardView>

@@ -1,5 +1,6 @@
 package fr.isen.banliat.androiderestaurant
 
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,25 +9,22 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
+import fr.isen.banliat.androiderestaurant.model.Basket
 
 open class MenuActivity: AppCompatActivity() {
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.nav_menu, menu)
+
         val menuView = menu?.findItem(R.id.shoppingCart)?.actionView
-        val count = menuView?.findViewById<TextView>(R.id.nbItems)
-        val sharedPrefrences = getSharedPreferences("app_prefs", MODE_PRIVATE)
-        val quantity = sharedPrefrences.getInt("basket_count", 0)
+        val countText = menuView?.findViewById(R.id.nbItems) as? TextView
+        val count = getSharedPreferences(Basket.USER_PREFERENCES_NAME, Context.MODE_PRIVATE).getInt(Basket.ITEMS_COUNT, 0)
 
-        if (quantity == 0) {
-            count?.isVisible = false
-        } else {
-            count?.text = quantity.toString()
-            count?.isVisible = true
-        }
+        countText?.isVisible = count > 0
+        countText?.text = count.toString()
 
-
-        menuView?.setOnClickListener{
-            if(quantity > 0) startActivity(Intent(this, BasketActivity::class.java))
+        menuView?.setOnClickListener {
+            if(count > 0) startActivity(Intent(this, BasketActivity::class.java))
             else {
                 val dialogBuilder = AlertDialog.Builder(this)
                 dialogBuilder.setMessage("Votre panier est vide...")
@@ -39,10 +37,8 @@ open class MenuActivity: AppCompatActivity() {
                 alert.show()
             }
         }
-
         return super.onCreateOptionsMenu(menu)
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){ R.id.account -> { val intent = Intent(this, LoginActivity::class.java)
@@ -51,5 +47,9 @@ open class MenuActivity: AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onResume() {
+        super.onResume()
+        invalidateOptionsMenu()
+    }
 
 }
