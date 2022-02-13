@@ -6,7 +6,7 @@ import com.google.android.material.snackbar.Snackbar
 import fr.isen.banliat.androiderestaurant.databinding.ActivityDetailBinding
 import fr.isen.banliat.androiderestaurant.model.*
 
-private lateinit var binding: ActivityDetailBinding
+lateinit var binding: ActivityDetailBinding
 
 class DetailActivity : MenuActivity() {
 

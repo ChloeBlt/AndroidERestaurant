@@ -25,35 +25,27 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
 
-            if (binding.edMail.text.trim().isNotEmpty() || binding.edPassword.text.trim().isNotEmpty()) {
+            if (binding.edMail.text.trim().isEmpty() || binding.edPassword.text.trim().isEmpty()) {
                 Toast.makeText(this, "entrer les informations nécessaires", Toast.LENGTH_SHORT).show()
-
-
+            } else {
                 val email = binding.edMail.text.toString()
                 val password = binding.edPassword.text.toString()
 
                 //Requete POST
-
                 val url = "http://test.api.catering.bluecodegames.com/user/login"
                 val jsonObject = JSONObject()
                 jsonObject.put("id_shop", "1")
                 jsonObject.put("email", email)
                 jsonObject.put("password", password)
 
-
                 val jsonRequest = JsonObjectRequest(
                     Request.Method.POST, url, jsonObject, { response ->
                         var gson = Gson()
-
                     }, {
                         Log.e("", "erreur lors de la récupération")
                     })
                 Volley.newRequestQueue(this).add(jsonRequest)
-
-
-
-            } else {
-                Toast.makeText(this, "champ vide", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "connection...", Toast.LENGTH_SHORT).show()
             }
         }
         binding.registerTxt.setOnClickListener {
