@@ -2,6 +2,7 @@ package fr.isen.banliat.androiderestaurant
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,13 +10,15 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import android.widget.Toast
 import com.android.volley.Request
-import com.android.volley.Response
 import com.android.volley.VolleyError
+import com.android.volley.VolleyLog.TAG
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import fr.isen.banliat.androiderestaurant.databinding.ActivityRegisterBinding
+import fr.isen.banliat.androiderestaurant.model.Basket
+import fr.isen.banliat.androiderestaurant.model.RegisterResponse
 import fr.isen.banliat.androiderestaurant.model.RegisterResult
 import fr.isen.banliat.androiderestaurant.model.User
 import org.json.JSONObject
@@ -34,6 +37,12 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.createBtn.setOnClickListener {
             register()
+
+        }
+
+        binding.loginTxt.setOnClickListener {
+            val intent = Intent (this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -50,8 +59,6 @@ class RegisterActivity : AppCompatActivity() {
         val email = binding.email.text.toString()
         val password = binding.password.text.toString()
 
-        Toast.makeText(this, "creation du compte", Toast.LENGTH_LONG).show()
-
         val queue = Volley.newRequestQueue(this)
         val url = "http://test.api.catering.bluecodegames.com/user/register"
         val jsonObject = JSONObject()
@@ -63,22 +70,34 @@ class RegisterActivity : AppCompatActivity() {
         jsonObject.put("password", password)
 
 
-        val jsonRequest = JsonObjectRequest(
-            Request.Method.POST,
+        val jsonRequest = JsonObjectRequest(Request.Method.POST,
             url,
             jsonObject,
             { response ->
+                Gson().fromJson(response["data"].toString(), RegisterResponse::class.java).let {
+                    val sharedPreferences =
+                        getSharedPreferences(Basket.USER_PREFERENCES_NAME, MODE_PRIVATE)
+                    sharedPreferences.edit().putInt(ID_USER, it.id).apply()
+                    Log.i(TAG, "gson -> $it")
+                    Toast.makeText(applicationContext, "Compte crée!", Toast.LENGTH_SHORT).show()
+                    finish()
+                    startActivity(Intent(this, BasketActivity::class.java))
+
+                    /*
                 val userResult =
                     GsonBuilder().create().fromJson(response.toString(), RegisterResult::class.java)
                 saveUser(userResult.data)
                 //var gson = Gson()
-            }, {
-                    error -> onFailure(error)
+                */
+                }
+            },{ error ->
+                    Log.d("request", String(error.networkResponse.data))
             }
         )
         queue.add(jsonRequest)
     }
 
+    /*
     private fun saveUser(user: User) {
         val sharedPreferences = getSharedPreferences(USER_PREFERENCES_NAME, Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
@@ -88,6 +107,7 @@ class RegisterActivity : AppCompatActivity() {
         setResult(Activity.RESULT_OK)
         finish()
     }
+     */
 
     private fun onFailure(error: VolleyError) {
         Log.d("request", String(error.networkResponse.data))
@@ -154,8 +174,9 @@ class RegisterActivity : AppCompatActivity() {
         } else if (binding.password.text.toString().length < 8) {
             Toast.makeText(this, "Le mot de passe est trop court", Toast.LENGTH_LONG).show()
             binding.password.requestFocus()
-            return false
             markAsInvalid(binding.password)
+            return false
+
         }
         markAsValid(binding.password)
         return true
@@ -164,13 +185,13 @@ class RegisterActivity : AppCompatActivity() {
     private fun markAsInvalid(input: View){
         input.backgroundTintList = ContextCompat.getColorStateList(
             applicationContext,
-            R.color.red);
+            R.color.red)
     }
     private fun markAsValid(input: View){
         input.backgroundTintList = ContextCompat.getColorStateList(
             applicationContext,
             R.color.teal_700
-        );
+        )
     }
 
     companion object {

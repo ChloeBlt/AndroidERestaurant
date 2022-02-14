@@ -19,7 +19,7 @@
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_dish.xml" value="0.23809523809523808" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_dishes.xml" value="0.1" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_home.xml" value="0.25" />
-        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_login.xml" value="0.5" />
+        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/basket_cell.xml" value="0.33" />
@@ -34,6 +34,8 @@
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/test.xml" value="0.25" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/layout/view_basket.xml" value="0.1" />
         <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/menu/nav_menu.xml" value="0.33" />
+        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3067708333333333" />
+        <entry key="..\:/Users/chole.banliat/AndroidStudioProjects/AndroidERestaurant/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.22239583333333332" />
       </map>
     </option>
   </component>

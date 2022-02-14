@@ -8,10 +8,11 @@
     tools:context=".LoginActivity">
 
     <TextView
+        android:id="@+id/connecionTitlePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
-        android:text="se connecter"
+        android:text="@string/connecionTitlePage"
         android:textColor="@color/turquoise"
         android:textSize="50sp"
         android:textStyle="bold"
@@ -35,8 +36,10 @@
             android:id="@+id/edMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:importantForAutofill="no" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -55,10 +58,10 @@
             android:id="@+id/edPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/password"
             tools:ignore="SpeakableTextPresentCheck"
             android:inputType="textPassword"
-            />
+            android:importantForAutofill="no" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,7 +72,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:background="@color/turquoise"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="☞ vous n'avez pas de compte ?"
+        android:text="@string/askLogin"
         android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"

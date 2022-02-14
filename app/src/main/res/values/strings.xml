@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidERestaurant</string>
+    <string name="app_name">Miam!</string>
     <string name="home_starter">Entrées</string>
     <string name="home_main_dish">Plats</string>
     <string name="home_dessert">Desserts</string>
@@ -25,4 +25,22 @@
     <string name="login_failed">"Login failed"</string>
     <string name="validationBasket">valider la commande</string>
     <string name="basketPageTitle">votre panier</string>
+    <string name="connecionTitlePage">se connecter</string>
+    <string name="firstNameRegister">Prénom</string>
+    <string name="AddressRegister">Adresse</string>
+    <string name="emailRegister">Email</string>
+    <string name="passwordRegister">Mot de passe</string>
+    <string name="createAccountPageTitle">Créer un compte</string>
+    <string name="createRegister">créer</string>
+    <string name="askLogin">☞ vous n\'avez pas de compte ?</string>
+    <string name="lastNameRegister">Nom</string>
+    <string name="pictureItemDescription">item food picture</string>
+    <string name="boutonPlusDescription">bouton plus</string>
+    <string name="boutonMoinsDescription">bouton moins</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="askRegister">☞ vous avez déjà un compte ?</string>
+    <string name="email">Email</string>
+    <string name="deleteButtonDescription">supprimer un plat</string>
+    <string name="imagePanierDescription">image panier</string>
 </resources>
